@@ -8,6 +8,7 @@ if(empty($_POST['login']) || empty($_POST['senha'])){
     header('Location: ../web/src/views/pg-login.html');
     exit();
 }
+
 // Query para buscar usuário e senha no banco
 $objSmtm = $objBanco -> prepare("SELECT PK_ID, DS_LOGIN, DS_EMAIL, TG_ADM FROM TS_USUARIO WHERE DS_LOGIN = :LOGIN AND DS_SENHA = md5(:SENHA)");
 
@@ -18,8 +19,6 @@ $objSmtm -> execute();
 
 // Transformando em array
 $result = $objSmtm -> fetch(PDO::FETCH_ASSOC);
-
-var_dump($result);
 
 
 //Verificando se voltou login e senha válidos
