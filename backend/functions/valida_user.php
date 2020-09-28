@@ -1,0 +1,10 @@
+<?php
+if(!$_SESSION['usersessao']){
+    session_start();
+}
+
+// Se não tem sessão, volta para o login
+if(!$_SESSION['usersessao']){
+    header('Location: ../web/src/views/pg-login.html');
+    exit();
+}
