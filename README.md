@@ -4,15 +4,15 @@
 
 <h2>Como executar este projeto ? ⚙️</h2> <br>
 
-<p align="end">Pensando em trazer uma melhor usabilidade para você, deixei este projeto hospedado neste Link, então basta apenas clicá-lo e você será direcionado à página = ).</p>
+<p align="center">Pensando em trazer uma melhor usabilidade para você, deixei este projeto hospedado neste Link, então basta apenas clicá-lo e você será direcionado à página = ).</p>
 
-Obs: Você pode abri-lo de qualquer dispositivo que desejar, seja ele tablet , celular, computador, notebook e etc... Ele é totalmente responsivo e garanto que não deixará nenhum usuário na mão. Assim como a Quero Bolsa jamais deixou um universitário = )
+<p>Obs: Você pode abri-lo de qualquer dispositivo que desejar, seja ele tablet , celular, computador, notebook e etc... Ele é totalmente responsivo e garanto que não deixará nenhum usuário na mão. Assim como a Quero Bolsa jamais deixou um universitário = )</p>
 
-Caso o link não funcione. 🔧
-Se o caso o link não direcioná-lo à página, basta apenas fazer o download de todos os arquivos, adicioná-los a uma página e clicar no arquivo index.html = ).
+<h2>Caso o link não funcione. 🔧<h2>
+<p>Se o caso o link não direcioná-lo à página, basta apenas fazer o download de todos os arquivos, adicioná-los a uma página e clicar no arquivo index.html = ).</p>
 
-Marcou uma faculdade como favorita, saiu da página e esqueceu qual havia marcado? 🤔
-Sem problemas! Sua faculdade escolhida fica salva no LocalStorage, então você pode sair e voltar da página quantas vezes quiser que sua faculdade estará lá esperando você.
+<h2>Marcou uma faculdade como favorita, saiu da página e esqueceu qual havia marcado? 🤔</h2>
+<p>Sem problemas! Sua faculdade escolhida fica salva no LocalStorage, então você pode sair e voltar da página quantas vezes quiser que sua faculdade estará lá esperando você.<p>
 <div>
     <ul>
         <li>Boas práticas ✔️</li>
