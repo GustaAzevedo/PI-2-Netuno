@@ -1,7 +1,5 @@
 <h1 class="text-red" align="center">PI-2-Netuno</h1>
 
-<p align="justify">Página de Bolsas Favoritas do Quero Bolsa</p>
-
 <a href="https://kogama.com.br/">Link da página</a><br>
 
 <h2>Como executar este projeto ? ⚙️</h2> <br>
@@ -15,14 +13,18 @@ Se o caso o link não direcioná-lo à página, basta apenas fazer o download de
 
 Marcou uma faculdade como favorita, saiu da página e esqueceu qual havia marcado? 🤔
 Sem problemas! Sua faculdade escolhida fica salva no LocalStorage, então você pode sair e voltar da página quantas vezes quiser que sua faculdade estará lá esperando você.
+<div>
+    <ul>
+        <li>Boas práticas ✔️</li>
+        <li>Mobile first.</li>
+        <li>Responsividade.<li>
+        <li>Código limpo.</li>
+        <li>HTML semântico.</li>
+        <li>Bons comentários no código.</li>
+        Funções nomeadas de acordo com as tarefas realizadas.
+    </ul>
+</div>
 
-Boas práticas ✔️
-Mobile first.
-Responsividade.
-Código limpo.
-HTML semântico.
-Bons comentários no código.
-Funções nomeadas de acordo com as tarefas realizadas.
 Linguagens utilizadas: 💻
 HTML
 CSS
