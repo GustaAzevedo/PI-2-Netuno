@@ -1,10 +1,10 @@
-<styles>
+<style>
 
 .text-red{
     color: red;
 }
 
-</styles>
+</style>
 
 <h1 class="text-red" align="center">PI-2-Netuno</h1>
 
