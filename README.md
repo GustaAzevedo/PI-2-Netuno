@@ -1,18 +1,12 @@
-<style>
-
-.text-red{
-    color: red;
-}
-
-</style>
-
 <h1 class="text-red" align="center">PI-2-Netuno</h1>
 
 <p align="justify">Página de Bolsas Favoritas do Quero Bolsa</p>
 
-<a href="https://kogama.com.br/">Link da página</a>
-Como executar este projeto ? ⚙️
-Pensando em trazer uma melhor usabilidade para você, deixei este projeto hospedado neste Link, então basta apenas clicá-lo e você será direcionado à página = ).
+<a href="https://kogama.com.br/">Link da página</a><br>
+
+<h2>Como executar este projeto ? ⚙️</h2> <br>
+
+<p align="end">Pensando em trazer uma melhor usabilidade para você, deixei este projeto hospedado neste Link, então basta apenas clicá-lo e você será direcionado à página = ).</p>
 
 Obs: Você pode abri-lo de qualquer dispositivo que desejar, seja ele tablet , celular, computador, notebook e etc... Ele é totalmente responsivo e garanto que não deixará nenhum usuário na mão. Assim como a Quero Bolsa jamais deixou um universitário = )
 
