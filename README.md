@@ -1,4 +1,12 @@
-<h1 align="center">PI-2-Netuno</h1>
+<styles>
+
+.text-red{
+    color: red;
+}
+
+</styles>
+
+<h1 class="text-red" align="center">PI-2-Netuno</h1>
 
 <p align="justify">Página de Bolsas Favoritas do Quero Bolsa</p>
 
