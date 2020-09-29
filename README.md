@@ -8,7 +8,7 @@
 
 <p>Obs: Você pode abri-lo de qualquer dispositivo que desejar, seja ele tablet , celular, computador, notebook e etc... Ele é totalmente responsivo e garanto que não deixará nenhum usuário na mão. Assim como a Quero Bolsa jamais deixou um universitário = )</p>
 
-<h2>Caso o link não funcione. 🔧<h2>
+<h2>Caso o link não funcione. 🔧</h2>
 <p>Se o caso o link não direcioná-lo à página, basta apenas fazer o download de todos os arquivos, adicioná-los a uma página e clicar no arquivo index.html = ).</p>
 
 <h2>Marcou uma faculdade como favorita, saiu da página e esqueceu qual havia marcado? 🤔</h2>
@@ -17,11 +17,11 @@
     <ul>
         <li>Boas práticas ✔️</li>
         <li>Mobile first.</li>
-        <li>Responsividade.<li>
+        <li>Responsividade.</li>
         <li>Código limpo.</li>
         <li>HTML semântico.</li>
         <li>Bons comentários no código.</li>
-        Funções nomeadas de acordo com as tarefas realizadas.
+        <li>Funções nomeadas de acordo com as tarefas realizadas.</li>
     </ul>
 </div>
 
