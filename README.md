@@ -11,7 +11,7 @@
 <h2>O projeto Netuno vem com um CRUD</h2>
 <p>O CRUD tem várias funcionalidades como listar, excluír, adicionar novos produtos e até mesmo clientes. <p>
 
-<h2>A página Netuno atende à todos os tópicos listados a baixo:</h2>
+<h3>A página Netuno atende à todos os tópicos listados a baixo:</h2>
 <div>
     <ul>
         <li>Boas práticas ✔️</li>
@@ -24,15 +24,20 @@
     </ul>
 </div>
 
-Tecnologias utilizadas: 💻
-HTML
-CSS
-JavaScript
-PHP
-MySQL
-Gulp
-Node
-Considerações: ✏️
-Foi um grande prazer ter realizado este projeto. 
+<h3>Tecnologias utilizadas: 💻</h3>
+<div>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>PHP</li>
+        <li>MySQL</li>
+        <li>Gulp</li>
+    <li>Node</li>
+    </ul>
+</div>
 
-Este foi um projeto realizado pelos deselvolvedores Guilherme Pereira Castro, Gustavo de Azevedo Pereira e João Silva. Caso notou algum erro, ou queira dar algum feedback, será um prazer.ouvi-lo !
+<h3>Considerações: ✏️</h3>
+<p>Foi um grande prazer ter realizado este projeto.</p> 
+
+<p>Este foi um projeto realizado pelos deselvolvedores Guilherme Pereira Castro, Gustavo de Azevedo Pereira e João Silva. Caso notou algum erro, ou queira dar algum feedback, será um prazer.ouvi-lo !</p>
