@@ -28,10 +28,10 @@ if($result){
                                     'idusuario' => preg_replace('/\D/','', $result['PK_ID']), 
                                     'emailusuario' => $result['DS_EMAIL'], 
                                     'adm' => preg_replace('/\D/','', $result['TG_ADM']));
-    header('Location: ./painel.php');
+    header('Location: ../web/src/views/menu.html');
     exit();
 }else{
     $_SESSION['idusuario'] = 0;
-    header('Location: ../web/src/views/pg-login.html');
+    header('Location: ../web/src/views/pg-login.php');
     exit();
 }
