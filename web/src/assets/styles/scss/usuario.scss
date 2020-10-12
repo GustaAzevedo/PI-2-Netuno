@@ -94,6 +94,13 @@ a {
   font-size: 28px;
 }
 
+.invalido{
+  font-size: 16px;
+  border-radius: 20px;
+  color: rgb(226, 86, 86);
+  text-align: center;
+}
+
 .container-form{
   width: 800px;
   margin: 50px auto;
@@ -128,6 +135,7 @@ a {
   width: 20px;
   height: 20px;
   margin-right: 10px;
+  cursor: pointer;
 }
 
 
@@ -155,6 +163,7 @@ a {
   border: none;
   border-radius: 5px;
   color: var(--white);
+  cursor: pointer;
 }
 
 .btn:hover{
@@ -173,6 +182,7 @@ a {
   border-radius: 5px;
   color: var(--blue);
   margin-left:20px;
+  cursor: pointer;
 }
 
 .btn-limpa:hover{

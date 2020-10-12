@@ -40,8 +40,11 @@
     <main>
         <div class="container-form">
             <h2 class="titulo">Usuários</h2>
+            <div class="invalido">
+                <p><?php session_start(); echo $_SESSION['usererro'];?></p>
+            </div>
             <form method="POST" action="../../../backend/usuariodigitar.php">
-                <div class="form">
+            <div class="form">
                     <div class=" input">
                         <label class=" d-block" for="usuario" >Login*</label>
                         <input class=" d-block" type="text" name="ds_login" id="usuario" required>
