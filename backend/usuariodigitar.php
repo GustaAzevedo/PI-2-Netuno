@@ -21,7 +21,8 @@ $adm      = $_POST['tg_adm'] ?? 0;
 
 if($senha != $senhacon){
     header('Location: ../web/src/views/usuario.php'); 
-    $_SESSION['usererro'] = 'As senhas são diferentes!';
+    $_SESSION['erro'] = true;
+    $_SESSION['msgusu'] = 'As senhas não são iguais!';
     exit();
 }
 
@@ -33,7 +34,8 @@ $result = $objSmtm -> fetch(PDO::FETCH_ASSOC);
 // se cair aqui, já existe cadastrado
 if($result){
     header('Location: ../web/src/views/usuario.php'); 
-    $_SESSION['usererro'] = 'Login já cadastrado!';
+    $_SESSION['erro'] = true;
+    $_SESSION['msgusu'] = 'Login já cadastrado!';
     exit();
 }
 
@@ -46,7 +48,8 @@ $result = $objSmtm -> fetch(PDO::FETCH_ASSOC);
 // se cair aqui, já existe cadastrado
 if($result){
     header('Location: ../web/src/views/usuario.php'); 
-    $_SESSION['usererro'] = 'E-mail já cadastrado!';
+    $_SESSION['erro'] = true;
+    $_SESSION['msgusu'] = 'E-mail já cadastrado!';
     exit();
 }
 
@@ -67,11 +70,14 @@ $objSmtm -> bindparam(':fk_usucriador',intval($_SESSION['usersessao']['idusuario
 $return = $objSmtm -> execute();
 
 if($return){
-    header('Location: ../web/src/views/menu.html');
+    header('Location: ../web/src/views/usuario.php');
+    $_SESSION['erro'] = false;
+    $_SESSION['msgusu'] = 'Registro salvo com sucesso!';
     exit(); 
 }else{
     header('Location: ../web/src/views/usuario.php'); 
-    $_SESSION['usererro'] = 'Erro ao salvar cadastro, tente novamente mais tarde!';
+    $_SESSION['erro'] = true;
+    $_SESSION['msgusu'] = 'Erro ao salvar cadastro, tente novamente mais tarde!';
     exit();
 } 
 

@@ -95,10 +95,15 @@ a {
 }
 
 .invalido{
-  font-size: 16px;
+  font-size: 18px;
   border-radius: 20px;
   color: rgb(226, 86, 86);
-  text-align: center;
+}
+
+.valido{
+  font-size: 18px;
+  border-radius: 20px;
+  color: rgb(9, 143, 20);
 }
 
 .container-form{

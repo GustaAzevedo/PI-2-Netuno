@@ -1,3 +1,4 @@
+<?php include "../../../backend/functions/valida_user.php";?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -40,9 +41,18 @@
     <main>
         <div class="container-form">
             <h2 class="titulo">Usuários</h2>
-            <div class="invalido">
-                <p><?php session_start(); echo $_SESSION['usererro'];?></p>
-            </div>
+            <?php 
+                if($_SESSION['erro']){
+                    echo '  <div class="invalido">
+                                <p> '. $_SESSION["msgusu"] .'</p>
+                            </div>';
+                }else{
+                    echo  '  <div class="valido">
+                                <p> ' . $_SESSION["msgusu"] . '</p>
+                            </div>';
+                };  
+            ?>
+            
             <form method="POST" action="../../../backend/usuariodigitar.php">
             <div class="form">
                     <div class=" input">
@@ -69,7 +79,7 @@
                     <span>Perfil de Administrador</span>
                 </div>
                 <div class=" button">
-                    <input class=" btn" type="submit" value="Entrar">
+                    <input class=" btn" type="submit" value="Salvar">
                     <input class=" btn-limpa" type="reset" value="Limpar">
                 </div>
             </form>
