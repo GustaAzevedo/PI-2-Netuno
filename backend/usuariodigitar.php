@@ -45,6 +45,7 @@ $objSmtm = $objBanco -> prepare("SELECT DS_EMAIL FROM TS_USUARIO WHERE DS_EMAIL 
 $objSmtm -> bindparam(':EMAIL',$email );
 $objSmtm -> execute();
 $result = $objSmtm -> fetch(PDO::FETCH_ASSOC);
+
 // se cair aqui, já existe cadastrado
 if($result){
     header('Location: ../web/src/views/usuario.php'); 
