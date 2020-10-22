@@ -21,23 +21,43 @@ a {
   height: 100%;
   padding: 10px 0;
   position: fixed;
-  background: #2397D4; /* 65% */
+  background: #D3DFFF; /* 65% */
   &__nav {
     display: flex;
     flex-direction: column;
     .nav {
       &__item {
         padding: 0 10px;
+        cursor: pointer;
+        &.hide-children {
+          & > .item__title {
+            .title {
+              &__icon {
+                transform: rotate(-90deg)
+              }
+            }
+          }
+          & > .item__subnav {
+            display: none;
+          }
+        }
         .item {
           &__title {
             display: flex;
             font-size: 28px;
+            align-items: center;
             justify-content: space-between;
+            .title {
+              &__icon {
+                width: 28px;
+                height: 28px;
+              }
+            }
           }
           &__subnav {
             display: flex;
             margin: 0 -10px;
-            background: #D1EFFF;
+            background: #E5ECFF;
             flex-direction: column;
             .subnav {
               &__item {
@@ -52,7 +72,7 @@ a {
                     justify-content: flex-start;
 
                     &:hover {
-                      background: red;
+                      color: #3BA1D9;
                     }
                   }
                 }
