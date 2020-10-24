@@ -28,7 +28,7 @@ if($result){
                                     'idusuario' => preg_replace('/\D/','', $result['PK_ID']), 
                                     'emailusuario' => $result['DS_EMAIL'], 
                                     'adm' => preg_replace('/\D/','', $result['TG_ADM']));
-    header('Location: ../web/src/views/menu.html');
+    header('Location: ../web/src/components/menu.html');
     exit();
 }else{
     $_SESSION['idusuario'] = 0;
