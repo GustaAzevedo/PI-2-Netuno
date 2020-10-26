@@ -18,9 +18,10 @@
 
 .input-container {
   display: flex;
-  font-size: 30px;
+  font-size: 25px;
   flex-direction: column;
   &__input {
+    height: 42px;
     padding: 10px;
     border-radius: 5px;
   }
