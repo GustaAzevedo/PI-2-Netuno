@@ -19,10 +19,15 @@ a {
   top: 60px;
   width: 250px;
   height: 100%;
+  display: flex;
   padding: 10px 0;
   position: fixed;
-  background: #D3DFFF; /* 65% */
+  align-items: center;
+  background: #D3DFFF;
+  flex-direction: column;
+  justify-content: space-between;
   &__nav {
+    width: 100%;
     display: flex;
     flex-direction: column;
     .nav {
@@ -82,5 +87,9 @@ a {
         }
       }
     }
+  }
+  img {
+    width: 280px;
+    margin-bottom: 10px;
   }
 }

@@ -14,3 +14,23 @@
 .right-container {
   margin-left: 270px;
 }
+
+.input-container {
+  display: flex;
+  font-size: 30px;
+  flex-direction: column;
+  &__input {
+    padding: 10px;
+    border-radius: 5px;
+  }
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 5px;
+  &:active {
+    opacity: 0.6;
+  }
+}
