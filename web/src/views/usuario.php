@@ -33,7 +33,7 @@
                     <a class="item__link" href="/">Produtos</a>
                   </li>
                   <li class="subnav__item">
-                    <a class="item__link" href="../views/usuario.html">Usuários</a>
+                    <a class="item__link" href="../../../backend/usuarioconsultar.php">Usuários</a>
                   </li>
                 </ul>
               </li>
@@ -50,26 +50,31 @@
                     <a class="item__link" href="/">Produtos</a>
                   </li>
                   <li class="subnav__item">
-                    <a class="item__link" href="../views/usuario.html">Usuários</a>
+                    <a class="item__link" href="../../../backend/usuarioconsultar.php">Usuários</a>
                   </li>
                 </ul>
               </li>
             </ul>
-          </nav>
+          <img src="../assets/images/logo.png" alt="netuno">
+      </nav>
     </header>
 
     <main>
         <div class="container-form">
             <h2 class="titulo">Usuários</h2>
             <?php 
+              $_SESSION['erro'] = $_SESSION['erro'] ?? '';
+              $_SESSION['msgusu'] = $_SESSION['msgusu'] ?? '';
                 if($_SESSION['erro']){
                     echo '  <div class="invalido">
                                 <p> '. $_SESSION["msgusu"] .'</p>
                             </div>';
+                            $_SESSION['msgusu'] = '';
                 }else{
                     echo  '  <div class="valido">
                                 <p> ' . $_SESSION["msgusu"] . '</p>
                             </div>';
+                            $_SESSION['msgusu'] = '';
                 };  
             ?>
             
