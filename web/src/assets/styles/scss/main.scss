@@ -70,9 +70,10 @@
   margin-right: 15px;
   flex-direction: column;
 
-  input, select {
+  input, select, textarea {
     height: 42px;
     padding: 10px;
+    font-size: 16px;
     border-radius: 5px;
     border: 1px solid black;
   }
