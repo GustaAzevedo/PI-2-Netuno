@@ -72,6 +72,21 @@ include "../backend/config/db.php";
         </a>
        
       </div>
+      <?php 
+              $_SESSION['erro'] = $_SESSION['erro'] ?? '';
+              $_SESSION['msgusu'] = $_SESSION['msgusu'] ?? '';
+                if($_SESSION['erro']){
+                    echo '  <div class="invalido">
+                                <p> '. $_SESSION["msgusu"] .'</p>
+                            </div>';
+                            $_SESSION['msgusu'] = '';
+                }else{
+                    echo  '  <div class="valido">
+                                <p> ' . $_SESSION["msgusu"] . '</p>
+                            </div>';
+                            $_SESSION['msgusu'] = '';
+                };  
+            ?>
       <form class="page-content__inputs">
         <label class="input-container inputs__login">
           Login
@@ -101,10 +116,12 @@ include "../backend/config/db.php";
                       <td>{$reg['DS_LOGIN']}</td>
                       <td>{$reg['DS_EMAIL']}</td>
                       <td width='390'>
+                      <a href='../backend/usuarioalterar.php?id={$reg['PK_ID']}'>
                         <button class='table__button table__edit' type='button'>
                           <img src='../web/src/assets/svgs/edit-icon.svg' alt='editar'>
                           Alterar
                         </button>
+                      </a>
                         <button class='table__button table__remove' type='button'>
                           <img src='../web/src/assets/svgs/trash-icon.svg' alt='remover'>
                           Excluir
