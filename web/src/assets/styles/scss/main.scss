@@ -45,6 +45,23 @@
 
 .inputs-group {
   display: flex;
+  margin-bottom: 15px;
+}
+
+.ml {
+  margin-left: 15px;
+}
+
+.mt {
+  margin-top: 15px;
+}
+
+.mr {
+  margin-right: 15px;
+}
+
+.mb {
+  margin-bottom: 15px;
 }
 
 .input-container {
@@ -87,6 +104,7 @@
   &-50 {
     width: 50%;
   }
+
   &-60 {
     width: 60%;
   }
@@ -109,7 +127,7 @@
 }
 
 .divider {
-  margin: 30px 0 15px 0;
+  margin: 30px 15px 15px 0;
   border: 1px solid black;
 }
 
