@@ -85,7 +85,7 @@
                     </div>
                     <div class=" input">
                         <label class=" d-block" for="email-usuario">E-mail*</label>
-                        <input class=" d-block" type="email" name="ds_email"  value='<?php echo "{$array['DS_EMAIL']}"?>' required>
+                        <input class=" d-block" type="email" name="ds_email"  value='<?php echo "{$array['DS_EMAIL']}"?>' required disabled="">
                     </div>
                 </div>
                 <div class="form-2">
@@ -99,9 +99,9 @@
                     </div>
                 </div>
                 <div class="form-3">
-                    <input type="checkbox"  name='tg_adm' value='<?php echo "{$array['TG_ADM']}"?>'>
+                    <input type="checkbox"  name='tg_adm' <?php if($array['TG_ADM'] == 1){ $cond = "value='1' checked";}else{ $cond = "value='1'";}echo"$cond";?>>
                     <span>Perfil de Administrador</span>
-                    <input type="hidden" name='pk_id' value='<?php echo "{$array['PK_ID']}"?>'>
+                    <input type="hidden" name='pk_id' value='<?php echo "{$array['PK_ID']}" ?>'>
                 </div>
                 <div class=" button">
                     <input class=" btn" type="submit" value="Salvar">
