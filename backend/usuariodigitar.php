@@ -15,8 +15,7 @@ $login    = $_POST['ds_login'];
 $email    = $_POST['ds_email'];
 $senha    = $_POST['ds_senha'];
 $senhacon = $_POST['ds_senhacon'];
-$adm      = $_POST['tg_adm'] = '1' ? 1 : 0;
-
+$adm      = $_POST['tg_adm'] == '1' ? 1 : 0;
 
 
 if($senha != $senhacon){
@@ -73,6 +72,7 @@ $objSmtm -> bindparam(':fk_usucriador',$_SESSION['usersessao']['idusuario']);
 
 $return = $objSmtm -> execute();
 
+
 if($return){
     header('Location: ../web/src/views/usuario.php');
     $_SESSION['erro'] = false;
@@ -83,5 +83,5 @@ if($return){
     $_SESSION['erro'] = true;
     $_SESSION['msgusu'] = 'Erro ao salvar cadastro, tente novamente mais tarde!';
     exit();
-} 
+}
 

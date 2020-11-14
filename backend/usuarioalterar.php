@@ -16,7 +16,7 @@ if(isset($_POST['pk_id'])){
     $login    = $_POST['ds_login'];
     $senha    = $_POST['ds_senha'];
     $senhacon = $_POST['ds_senhacon'];
-    $adm      = $_POST['tg_adm'] = '1' ? 1 : 0;
+    $adm      = $_POST['tg_adm'] == '1' ? 1 : 0;
 
     
     if($senha != $senhacon){
