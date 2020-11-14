@@ -16,9 +16,8 @@ if(isset($_POST['pk_id'])){
     $login    = $_POST['ds_login'];
     $senha    = $_POST['ds_senha'];
     $senhacon = $_POST['ds_senhacon'];
-    $adm      = $_POST['tg_adm'] ?? 0;
+    $adm      = $_POST['tg_adm'] = '1' ? 1 : 0;
 
-    var_dump($_POST);
     
     if($senha != $senhacon){
 
@@ -64,18 +63,22 @@ if(isset($_POST['pk_id'])){
         exit();
     }
 
+    //Criptografando
+    $senha = password_hash($senha,PASSWORD_DEFAULT);
+
 
     $objSmtm = $objBanco -> prepare("UPDATE TS_USUARIO SET
                                         DS_LOGIN = :DS_LOGIN, 
-                                        DS_SENHA = md5(:DS_SENHA), 
+                                        DS_SENHA = :DS_SENHA, 
                                         TG_ADM   = :TG_ADM,
                                       DH_ALTERACAO = now()
                                     WHERE
                                         PK_ID = $id");
 
-    $objSmtm -> bindparam(':DS_LOGIN',$login);
-    $objSmtm -> bindparam(':DS_SENHA',$senha);
-    $objSmtm -> bindparam(':TG_ADM',intval($adm),PDO::PARAM_INT);
+    $objSmtm -> bindParam(':DS_LOGIN',$login);
+    $objSmtm -> bindParam(':DS_SENHA',$senha);
+    $objSmtm -> bindParam(':TG_ADM',$adm);
+    
     
     if($objSmtm -> execute()){
         header('Location: ./usuarioconsultar.php');

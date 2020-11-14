@@ -31,7 +31,7 @@ include "../backend/config/db.php";
             </span>
             <ul class="item__subnav">
               <li class="subnav__item">
-                <a class="item__link" href="/">Clientes</a>
+                <a class="item__link" href="../../../backend/register-client.php">Clientes</a>
               </li>
               <li class="subnav__item">
                 <a class="item__link" href="/">Produtos</a>
@@ -48,7 +48,7 @@ include "../backend/config/db.php";
             </span>
             <ul class="item__subnav">
               <li class="subnav__item">
-                <a class="item__link" href="/">Clientes</a>
+                <a class="item__link" href="../../../backend/register-client.php">Clientes</a>
               </li>
               <li class="subnav__item">
                 <a class="item__link" href="/">Produtos</a>
