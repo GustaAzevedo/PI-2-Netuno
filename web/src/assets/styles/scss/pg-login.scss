@@ -32,6 +32,13 @@
 /*------------------------------- FIM HEADER -------------------------------------*/
 
 /*-------------------------------------------- FORMULÁRIO --------------------------------------------------*/
+.invalido{
+    font-size: 20px;
+    border-radius: 20px;
+    color: rgb(226, 86, 86);
+    text-align: center;
+}
+
 .container{
     min-height: calc(100vh - 60px);
     display: flex;
@@ -50,7 +57,7 @@
 }
 
 .container-form .logo img{
-    width: 60%;
+    width: 50%;
     position: relative;
 }
 
@@ -99,4 +106,5 @@
 .container-form .form .button{
     text-align: end;
 }
+
 
