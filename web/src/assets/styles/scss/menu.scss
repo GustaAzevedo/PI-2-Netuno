@@ -21,6 +21,7 @@ a {
   align-items: center;
   background: #D3DFFF;
   flex-direction: column;
+  min-height: calc(100vh - 60px);
   justify-content: space-between;
   &__nav {
     width: 100%;
