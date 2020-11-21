@@ -31,13 +31,13 @@ include "../backend/config/db.php";
             </span>
             <ul class="item__subnav">
               <li class="subnav__item">
-                <a class="item__link" href="/">Clientes</a>
+                <a class="item__link" href="../../../backend/register-client.php">Clientes</a>
               </li>
               <li class="subnav__item">
                 <a class="item__link" href="/">Produtos</a>
               </li>
               <li class="subnav__item">
-                <a class="item__link" href="../../../backend/usuarioconsultar.php">Usuários</a>
+                <a class="item__link" href="./usuarioconsultar.php">Usuários</a>
               </li>
             </ul>
           </li>
@@ -48,13 +48,13 @@ include "../backend/config/db.php";
             </span>
             <ul class="item__subnav">
               <li class="subnav__item">
-                <a class="item__link" href="/">Clientes</a>
+                <a class="item__link" href="../../../backend/register-client.php">Clientes</a>
               </li>
               <li class="subnav__item">
                 <a class="item__link" href="/">Produtos</a>
               </li>
               <li class="subnav__item">
-                <a class="item__link" href="../../../backend/usuarioconsultar.php">Usuários</a>
+                <a class="item__link" href="./usuarioconsultar.php">Usuários</a>
               </li>
             </ul>
           </li>
@@ -72,6 +72,21 @@ include "../backend/config/db.php";
         </a>
        
       </div>
+      <?php 
+              $_SESSION['erro'] = $_SESSION['erro'] ?? '';
+              $_SESSION['msgusu'] = $_SESSION['msgusu'] ?? '';
+                if($_SESSION['erro']){
+                    echo '  <div class="invalido">
+                                <p> '. $_SESSION["msgusu"] .'</p>
+                            </div>';
+                            $_SESSION['msgusu'] = '';
+                }else{
+                    echo  '  <div class="valido">
+                                <p> ' . $_SESSION["msgusu"] . '</p>
+                            </div>';
+                            $_SESSION['msgusu'] = '';
+                };  
+            ?>
       <form class="page-content__inputs">
         <label class="input-container inputs__login">
           Login
@@ -79,7 +94,7 @@ include "../backend/config/db.php";
         </label>
         <label class="input-container inputs__email">
           E-mail
-          <input type="email" class="input-container__input" name='ds_email'>
+          <input type="text" class="input-container__input" name='ds_email'>
         </label>
         <button type="submit" class="inputs__search">
           <img src="../web/src/assets/svgs/search-icon.svg" alt="buscar">
@@ -94,21 +109,25 @@ include "../backend/config/db.php";
           <th>Ação</th>
         </tr>
         <?php
-          if(count($count) > 0){
+          if(count($result) > 0){
             foreach ($result as $id => $reg){
               echo "<tr align='center'>
                       <td>{$reg['PK_ID']}</td>
                       <td>{$reg['DS_LOGIN']}</td>
                       <td>{$reg['DS_EMAIL']}</td>
                       <td width='390'>
-                        <button class='table__button table__edit' type='button'>
-                          <img src='../web/src/assets/svgs/edit-icon.svg' alt='editar'>
-                          Alterar
-                        </button>
-                        <button class='table__button table__remove' type='button'>
-                          <img src='../web/src/assets/svgs/trash-icon.svg' alt='remover'>
-                          Excluir
-                        </button>
+                        <a href='../backend/usuarioalterar.php?id={$reg['PK_ID']}'>
+                          <button class='table__button table__edit' type='button'>
+                            <img src='../web/src/assets/svgs/edit-icon.svg' alt='editar'>
+                            Alterar
+                          </button>
+                        </a>
+                        <a href='../backend/usuariodeletar.php?id={$reg['PK_ID']}'>
+                          <button class='table__button table__remove' type='button'>
+                            <img src='../web/src/assets/svgs/trash-icon.svg' alt='remover'>
+                            Excluir
+                          </button>
+                        </a>
                       </td>
             </tr>";
             }

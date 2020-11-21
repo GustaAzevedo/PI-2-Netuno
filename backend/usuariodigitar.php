@@ -15,8 +15,7 @@ $login    = $_POST['ds_login'];
 $email    = $_POST['ds_email'];
 $senha    = $_POST['ds_senha'];
 $senhacon = $_POST['ds_senhacon'];
-$adm      = $_POST['tg_adm'] ?? 0;
-
+$adm      = $_POST['tg_adm'] == '1' ? 1 : 0;
 
 
 if($senha != $senhacon){
@@ -54,9 +53,12 @@ if($result){
     exit();
 }
 
+//Criptografando
+$senha = password_hash($senha,PASSWORD_DEFAULT);
+
 //query de insert
 $queryInsert = "insert into ts_usuario (DS_LOGIN, DS_EMAIL, DS_SENHA, TG_ADM, DH_INCLUSAO, FK_USUCRIADOR) 
-                                        values (:ds_login, :ds_email,  md5(:ds_senha), :tg_adm, now(), :fk_usucriador)";
+                                        values (:ds_login, :ds_email,  :ds_senha, :tg_adm, now(), :fk_usucriador)";
 
 //preparando query
 $objSmtm = $objBanco -> prepare($queryInsert);
@@ -65,10 +67,11 @@ $objSmtm = $objBanco -> prepare($queryInsert);
 $objSmtm -> bindparam(':ds_login',$login);
 $objSmtm -> bindparam(':ds_email',$email);
 $objSmtm -> bindparam(':ds_senha',$senha);
-$objSmtm -> bindparam(':tg_adm',intval($adm),PDO::PARAM_INT);
-$objSmtm -> bindparam(':fk_usucriador',intval($_SESSION['usersessao']['idusuario']),PDO::PARAM_INT);
+$objSmtm -> bindparam(':tg_adm',$adm);
+$objSmtm -> bindparam(':fk_usucriador',$_SESSION['usersessao']['idusuario']);
 
 $return = $objSmtm -> execute();
+
 
 if($return){
     header('Location: ../web/src/views/usuario.php');
@@ -80,5 +83,5 @@ if($return){
     $_SESSION['erro'] = true;
     $_SESSION['msgusu'] = 'Erro ao salvar cadastro, tente novamente mais tarde!';
     exit();
-} 
+}
 

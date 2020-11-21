@@ -10,19 +10,17 @@ if(empty($_POST['login']) || empty($_POST['senha'])){
 }
 
 // Query para buscar usuário e senha no banco
-$objSmtm = $objBanco -> prepare("SELECT PK_ID, DS_LOGIN, DS_EMAIL, TG_ADM FROM TS_USUARIO WHERE DS_LOGIN = :LOGIN AND DS_SENHA = md5(:SENHA)");
+$objSmtm = $objBanco -> prepare("SELECT PK_ID, DS_SENHA, DS_LOGIN, DS_EMAIL, TG_ADM FROM TS_USUARIO WHERE DS_LOGIN = :LOGIN");
 
 // Substituindo valores e executando
 $objSmtm -> bindparam(':LOGIN',$_POST['login']);
-$objSmtm -> bindparam(':SENHA',$_POST['senha']);
 $objSmtm -> execute();
 
 // Transformando em array
 $result = $objSmtm -> fetch(PDO::FETCH_ASSOC);
 
-
 //Verificando se voltou login e senha válidos
-if($result){
+if(password_verify($_POST['senha'], $result['DS_SENHA'])){
 
     $_SESSION['usersessao'] = array('usuario' => $result['DS_LOGIN'], 
                                     'idusuario' => preg_replace('/\D/','', $result['PK_ID']), 

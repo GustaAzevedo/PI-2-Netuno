@@ -9,17 +9,50 @@ if(!$_SESSION['usersessao']){
 }
 
 // Listar registros
-$_GET['ds_nome']    = $_GET['ds_nome'] ?? false;
+$_GET['ds_login']    = $_GET['ds_login'] ?? false;
 $_GET['ds_email']   = $_GET['ds_email'] ?? false;
 
 
 //Se nenhum foi preenchido, traz todos os regitros
-if(!$_GET['ds_nome'] && !$_GET['ds_email']){
+if(!$_GET['ds_login'] && !$_GET['ds_email']){
     $query = "SELECT PK_ID, DS_LOGIN, DS_EMAIL FROM TS_USUARIO WHERE TG_INATIVO = 0";
-    $result = $objBanco -> Query($query);
-    $objsmtm = $objBanco -> Query($query);
+    $objsmtm = $objBanco -> prepare($query);
     $objsmtm -> execute();
-    $count = $objsmtm -> fetch();
+    $result = $objsmtm -> fetchall();
+    $count = $objsmtm -> fetchall();
     include "../web/src/views/pg-user.php";
-    exit();
+ 
+}else{
+
+    $login   = $_GET['ds_login'] ?? '';
+    $email   = $_GET['ds_email'] ?? '';
+
+    $query = "SELECT PK_ID, DS_LOGIN, DS_EMAIL FROM TS_USUARIO WHERE TG_INATIVO = 0";
+
+    //Adicionando as condições para pesquisa
+    if($login != ''){
+        $query = $query . " AND DS_LOGIN LIKE :login";
+    }
+    if($email != ''){
+        $query = $query . " AND DS_EMAIL LIKE :email";
+    }
+
+    //Trocando as condições
+    $objSmtm = $objBanco -> prepare($query);
+    if($login != ''){
+        $likelogin = $login . '%';
+        $objSmtm -> bindparam(':login', $likelogin);
+    }
+    if($email != ''){
+        $likeemail = $email . '%';
+        $objSmtm -> bindparam(':email',$likeemail);
+    }
+
+    //Passando para a tela
+    $objSmtm -> execute();
+    $result = $objSmtm -> fetchall();
+    $count = $objSmtm -> fetchall();
+
+    include "../web/src/views/pg-user.php";
+
 }
