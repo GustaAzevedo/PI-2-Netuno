@@ -35,6 +35,29 @@ if($result){
     exit();
 }
 
+if($_POST['pessoa'] == 'F'){
+    if(strlen($_POST['cpf']) != 11){
+        header('Location: ../web/src/views/register-client.php'); 
+        $_SESSION['erro'] = true;
+        $_SESSION['msgusu'] = 'Número de dígitos para o tipo de pessoa inválido! (CPF)';
+        exit();
+    }
+}else{
+    if(strlen($_POST['cpf']) != 14){
+        header('Location: ../web/src/views/register-client.php'); 
+        $_SESSION['erro'] = true;
+        $_SESSION['msgusu'] = 'Número de dígitos para o tipo de pessoa inválido! (CNPJ)';
+        exit();
+    }
+}
+
+if(strlen($_POST['cep']) != 8){
+    header('Location: ../web/src/views/register-client.php'); 
+    $_SESSION['erro'] = true;
+    $_SESSION['msgusu'] = 'Número de dígitos para o CEP inválido!';
+    exit();
+}
+
 //query de insert
 $queryInsert = "INSERT INTO tb_cliente (DS_FANTASIA, 
                                         DS_RAZAO, 
@@ -68,7 +91,7 @@ $queryInsert = "INSERT INTO tb_cliente (DS_FANTASIA,
                                         :complemento,
                                         :referencia,
                                         :observacao,
-                                        0,
+                                        :inativo,
                                         now(),
                                         :usu,
                                         :estado)";
@@ -123,6 +146,9 @@ $objSmtm -> bindparam(':estado', $estado);
 
 $usercriador = intval($_SESSION['usersessao']['idusuario']);
 $objSmtm -> bindparam(':usu', $usercriador);
+
+$inativo = $_POST['inativo'] == '1' ? 1 : 0;
+$objSmtm -> bindparam(':inativo', $inativo);
 
 $return = $objSmtm -> execute();
 $a = $objSmtm -> errorInfo();

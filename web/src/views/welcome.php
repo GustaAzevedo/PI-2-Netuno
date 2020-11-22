@@ -40,18 +40,19 @@
           </li>
           <li class="nav__item hide-children">
             <span class="item__title">
-              Cadastros 
-              <img class="title__icon" src="../assets/svgs/arrow-down.svg" alt="arrow down">
+              Mais
+              <img
+                class="title__icon"
+                src="../assets/svgs/arrow-down.svg"
+                alt="arrow down"
+              />
             </span>
             <ul class="item__subnav">
               <li class="subnav__item">
-                <a class="item__link" href="/">Clientes</a>
+                <a class="item__link" href="#">Logs</a>
               </li>
               <li class="subnav__item">
-                <a class="item__link" href="/">Produtos</a>
-              </li>
-              <li class="subnav__item">
-                <a class="item__link" href="../views/usuario.html">Usuários</a>
+                <a class="item__link" href="../../../backend/functions/logout.php">Logout</a>
               </li>
             </ul>
           </li>

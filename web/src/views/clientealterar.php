@@ -1,15 +1,14 @@
-<?php include "../../../backend/functions/valida_user.php";?>
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Página de usuário</title>
-    <script src="../assets/js/menu.js"></script>
-    <link rel="stylesheet" href="../assets/styles/css/menu.css" />
-    <link rel="stylesheet" href="../assets/styles/css/header.css" />
-    <link rel="stylesheet" href="../assets/styles/css/main.css" />
-    <link rel="stylesheet" href="../assets/styles/css/register-client.css">
+    <script src="../web/src/assets/js/menu.js"></script>
+    <link rel="stylesheet" href="../web/src/assets/styles/css/menu.css" />
+    <link rel="stylesheet" href="../web/src/assets/styles/css/header.css" />
+    <link rel="stylesheet" href="../web/src/assets/styles/css/main.css" />
+    <link rel="stylesheet" href="../web/src/assets/styles/css/register-client.css">
     <link
       href="https://fonts.googleapis.com/css2?family=Rhodium+Libre&display=swap"
       rel="stylesheet"
@@ -28,7 +27,7 @@
               Cadastros
               <img
                 class="title__icon"
-                src="../assets/svgs/arrow-down.svg"
+                src="../web/src/assets/svgs/arrow-down.svg"
                 alt="arrow down"
               />
             </span>
@@ -62,11 +61,11 @@
             </ul>
           </li>
         </ul>
-        <img src="../assets/images/logo.png" alt="netuno" />
+        <img src="../web/src/assets/images/logo.png" alt="netuno" />
       </nav>
       <section class="main__page-content right-container">
         <div class="page-content__title">
-          <h1 class="page-title mb">Clientes</h1>
+          <h1 class="page-title mb">Clientes(Alterar)</h1>
         </div>
         <?php 
               $_SESSION['erro'] = $_SESSION['erro'] ?? '';
@@ -85,44 +84,52 @@
                             $_SESSION['erro']   = '';
                 };  
         ?>
-        <form class="page-content__inputs mb" method='POST' action='../../../backend/clientedigitar.php'>
+        <form class="page-content__inputs mb" method='POST' action='../backend/clientealterar.php'>
           <div class="inputs-group mb">
             <label class="input-container input-container-40">
               Fantasia*
-              <input name="fantasia" type="text" required/>
+              <input name="fantasia" type="text" value='<?php echo "{$array['DS_FANTASIA']}"?>' required/>
             </label>
             <label class="input-container input-container-60">
               Razão Social*
-              <input name="razao" type="text" required/>
+              <input name="razao" type="text" value='<?php echo "{$array['DS_RAZAO']}"?>' required/>
             </label>
           </div>
 
           <div class="inputs-group ">
             <label class="input-container input-container-10">
               Pessoa*
-              <select name="pessoa" id="" required>
-                <option value="F">F</option>
-                <option value="J">J</option>
+              <select name="pessoa" id=""  required>
+                <?php
+                  if($array['TG_PESSOA'] == 'F'){
+                     echo '<option value="F" selected>F</option>
+                           <option value="J">J</option>'; 
+                  }else{
+                    echo '<option value="F">F</option>
+                           <option value="J" selected>J</option>'; 
+                  }
+                ?>
+                
               </select>
             </label>
             <label class="input-container input-container-45">
               CPF/CNPJ*
-              <input name="cpf" type="number" required/>
+              <input name="cpf" type="number" value='<?php echo "{$array['NR_CPF']}"?>' required/>
             </label>
             <label class="input-container input-container-45">
               E-mail*
-              <input name="email" type="email" required/>
+              <input name="email" type="email" value='<?php echo "{$array['DS_EMAIL']}"?>' required/>
             </label>
           </div>
 
           <div class="inputs-group">
             <label class="input-container input-container-50">
               Telefone
-              <input name="telefone" type="tel" pattern="[0-9]+" max='10'placeholder="99 99999999"/>
+              <input name="telefone" value='<?php echo "{$array['DS_TELEFONE']}"?>' type="tel" pattern="[0-9]+" max='10'placeholder="99 99999999"/>
             </label>
             <label class="input-container input-container-50">
               Celular
-              <input name="celular" type="tel"pattern="[0-9]+" max='11' placeholder="99 999999999"/>
+              <input name="celular" value='<?php echo "{$array['DS_CELULAR']}"?>' type="tel"pattern="[0-9]+" max='11' placeholder="99 999999999"/>
             </label>
           </div>
 
@@ -131,81 +138,70 @@
           <div class="inputs-group">
             <label class="input-container input-container-40">
               CEP*
-              <input name="cep" type="number" max='99999999' required/>
+              <input name="cep" value='<?php echo "{$array['DS_CEP']}"?>' type="number" max='99999999' required/>
             </label>
             <label class="input-container input-container-60">
               Endereço*
-              <input name="endereco" type="text" required/>
+              <input name="endereco" value='<?php echo "{$array['DS_ENDERECO']}"?>' type="text" required/>
             </label>
           </div>
 
           <div class="inputs-group">
             <label class="input-container input-container-10">
               Número*
-              <input name="numero" type="text" required/>
+              <input name="numero" value='<?php echo "{$array['DS_NUMERO']}"?>' type="text" required/>
             </label>
             <label class="input-container input-container-10">
               Estado*
               <select name="estado" id="" required>
-              <option value=""></option>
-                <option value="AC">AC</option>
-                <option value="AL">AL</option>
-                <option value="AM">AM</option>
-                <option value="AP">AP</option>
-                <option value="BA">BA</option>
-                <option value="CE">CE</option>
-                <option value="DF">DF</option>
-                <option value="ES">ES</option>
-                <option value="GO">GO</option>
-                <option value="MA">MA</option>
-                <option value="MG">MG</option>
-                <option value="MS">MS</option>
-                <option value="MT">MT</option>
-                <option value="PA">PA</option>
-                <option value="PB">PB</option>
-                <option value="PE">PE</option>
-                <option value="PI">PI</option>
-                <option value="PR">PR</option>
-                <option value="RJ">RJ</option>
-                <option value="RN">RN</option>
-                <option value="RO">RO</option>
-                <option value="RR">RR</option>
-                <option value="RS">RS</option>
-                <option value="SC">SC</option>
-                <option value="SE">SE</option>
-                <option value="SP">SP</option>
-                <option value="TO">TO</option>
+                <option value=""></option>
+                <?php
+                  if($array['FK_ESTADO'] =='AC'){
+                    echo '<option value="AC" selected>AC</option>';
+                  }else{
+                    echo '<option value="AC">AC</option>';
+                  }
+                  foreach ($resultES as $id => $reg){
+                    if($array['FK_ESTADO'] == $reg['PK_ID']){
+                      echo "<option value='{$reg['PK_ID']}' selected>{$reg['PK_ID']}</option>";
+                    }
+                    else{
+                      echo "<option value='{$reg['PK_ID']}'>{$reg['PK_ID']}</option>";
+                    }
+                  }
+                ?>
               </select>
             </label>
             <label class="input-container input-container-80">
               Cidade*
-              <input name="cidade" type="text" required/>
+              <input name="cidade" type="text" value='<?php echo "{$array['DS_CIDADE']}"?>' required/>
             </label>
           </div>
 
           <div class="inputs-group">
             <label class="input-container input-container-50">
               Complemento
-              <input name="complemento" type="text" />
+              <input name="complemento" value='<?php echo "{$array['DS_COMPLEMENTO']}"?>' type="text" />
             </label>
             <label class="input-container input-container-50">
               Refêrencia
-              <input name="referencia" type="text" />
+              <input name="referencia" type="text" value='<?php echo "{$array['DS_REFERENCIA']}"?>'/>
             </label>
           </div>
 
           <label class="input-container">
             Observação
-            <textarea name="observacao" id="" cols="30" rows="10"></textarea>
+            <textarea name="observacao" id="" cols="30" rows="10" ><?php echo "{$array['DS_OBSERVACAO']}"?></textarea>
           </label>
-
+          <input type="hidden" name='pk_id' value='<?php echo "{$array['PK_ID']}" ?>'>
           <label class="checkbox-container mt mb">
             <input name="inativo" type="checkbox" name="" id="" />
             Inativo
           </label>
 
           <button class="blue-button mr" type="submit">Salvar</button>
-          <button class="white-button" type="button">Limpar</button>
+          <button class="white-button" type="reset">Limpar</button>
+
 
         </form>
       </section>
