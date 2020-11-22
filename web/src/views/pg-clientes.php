@@ -89,11 +89,11 @@
       <form class="page-content__inputs" method='GET' action='../backend/clienteconsultar.php'>
         <label class="input-container inputs__login" name='ds_fantasia'>
           Fantasia
-          <input type="text" class="input-container__input">
+          <input type="text" class="input-container__input"  name='ds_fantasia'>
         </label>
         <label class="input-container inputs__email" name='nr_cpf'>
           CPF/CNPJ
-          <input type="number" class="input-container__input">
+          <input type="number" class="input-container__input"  name='nr_cpf'>
         </label>
         <button type="submit" class="inputs__search">
           <img src="../web/src/assets/svgs/search-icon.svg" alt="buscar">

@@ -9,14 +9,13 @@ if(!$_SESSION['usersessao']){
 }
 
 // Listar registros
-//$ab  = $_GET['ds_fantasia'] ?? false;
-//$bc  = $_GET['nr_cpf'] ?? false;
+$_GET['ds_fantasia']   = $_GET['ds_fantasia'] ?? false;
+$_GET['nr_cpf']        = $_GET['nr_cpf'] ?? false;
 
-var_dump($_GET);
 
 
 //Se nenhum foi preenchido, traz todos os regitros
-if(!$ab && !$bc){
+if(!$_GET['ds_fantasia'] && !$_GET['nr_cpf']){
     $query = "SELECT PK_ID, DS_FANTASIA, NR_CPF FROM TB_CLIENTE WHERE TG_INATIVO = 0";
     $objsmtm = $objBanco -> prepare($query);
     $objsmtm -> execute();
