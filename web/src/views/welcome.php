@@ -1,3 +1,12 @@
+<?php
+  session_start();
+  
+  // validando usuário
+  if($_SESSION['idusuario'] = 0){
+      header('Location: ../web/src/views/pg-login.html');
+      exit();
+  }
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -57,10 +66,12 @@
             </ul>
           </li>
         </ul>
-        <img src="../assets/images/logo.png" alt="netuno">
+        <a href="#">
+          <img src="../assets/images/logo.png" alt="netuno">
+        </a>
     </nav>
     <section class="main__page-content right-container">
-      <h2 class="page-title txt-center">Bem vindo, usuário !</h2>
+      <h2 class="page-title txt-center">Bem vindo, <?php echo"{$_SESSION['usersessao']['usuario']}";?> !</h2>
     </section>
   </main>
 </body>

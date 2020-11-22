@@ -26,7 +26,7 @@
                 </span>
                 <ul class="item__subnav">
                   <li class="subnav__item">
-                    <a class="item__link" href="../../../backend/register-client.php">Clientes</a>
+                    <a class="item__link" href="../backend/clienteconsultar.php">Clientes</a>
                   </li>
                   <li class="subnav__item">
                     <a class="item__link" href="/">Produtos</a>
@@ -55,7 +55,10 @@
                 </ul>
               </li>
             </ul>
-          <img src="../web/src/assets/images/logo.png" alt="netuno">
+           <a href="../web/src/views/welcome.php">
+              <img src="../web/src/assets/images/logo.png" alt="netuno">
+           </a> 
+          
       </nav>
     </header>
 

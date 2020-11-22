@@ -34,6 +34,7 @@
             </span>
             <ul class="item__subnav">
               <li class="subnav__item">
+                <a class="item__link" href="../../../backend/clienteconsultar.php">Clientes</a>
               </li>
               <li class="subnav__item">
                 <a class="item__link" href="/">Produtos</a>
@@ -48,7 +49,7 @@
               Mais
               <img
                 class="title__icon"
-                src="../web/src/assets/svgs/arrow-down.svg"
+                src="../assets/svgs/arrow-down.svg"
                 alt="arrow down"
               />
             </span>
@@ -62,7 +63,9 @@
             </ul>
           </li>
         </ul>
-        <img src="../assets/images/logo.png" alt="netuno" />
+        <a href="./welcome.php">
+          <img src="../assets/images/logo.png" alt="netuno" />
+        </a>
       </nav>
       <section class="main__page-content right-container">
         <div class="page-content__title">
