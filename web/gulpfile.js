@@ -1,5 +1,11 @@
 "use strict";
 
+/* 
+*
+* /web: run "npx gulp"
+*
+*/
+
 const gulp = require("gulp");
 const sass = require("gulp-sass");
 

@@ -78,6 +78,11 @@
     border: 1px solid black;
   }
 
+  textarea {
+    min-height: 120px;
+    resize: vertical;
+  }
+
   &-no-margin {
     margin-right: 0;
   }
@@ -88,6 +93,10 @@
 
   &-20 {
     width: 20%;
+  }
+
+  &-25 {
+    width: 25%;
   }
 
   &-30 {
