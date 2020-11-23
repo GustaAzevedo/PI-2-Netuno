@@ -102,6 +102,12 @@
           &__edit {
             margin-right: 15px;
             background:#2397D4;
+            img {
+              &, * {
+                width: 25px;
+                height: 25px;
+              }
+            }
           }
           &__remove {
             background: #E73F3F;
