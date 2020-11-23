@@ -15,17 +15,6 @@
   display: flex;
 }
 
-.blue-button {
-  color: white;
-  background: #2397D4;
-}
-
-.white-button {
-  color: #2397D4;
-  background: white;
-  border: 1px solid #2397D4;
-}
-
 .right-container {
   width: 100%;
   margin-left: 35px;
@@ -76,6 +65,10 @@
     font-size: 16px;
     border-radius: 5px;
     border: 1px solid black;
+
+    &:disabled {
+      background: #f1f1f1;
+    }
   }
 
   textarea {
@@ -150,7 +143,7 @@
   text-align: center;
 }
 
-button {
+button, .btn {
   border: none;
   outline: none;
   cursor: pointer;
@@ -160,6 +153,17 @@ button {
   &:active {
     opacity: 0.6;
   }
+}
+
+.blue-button {
+  color: white;
+  background: #2397D4;
+}
+
+.white-button {
+  color: #2397D4;
+  background: white;
+  border: 1px solid #2397D4;
 }
 
 .invalido{
