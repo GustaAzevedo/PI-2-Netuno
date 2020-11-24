@@ -31,7 +31,7 @@
                 <a class="item__link" href="./clienteconsultar.php">Clientes</a>
               </li>
               <li class="subnav__item">
-                <a class="item__link" href="/">Produtos</a>
+                <a class="item__link" href="./produtoconsultar.php">Produtos</a>
               </li>
               <li class="subnav__item">
                 <a class="item__link" href="./usuarioconsultar.php">Usuários</a>

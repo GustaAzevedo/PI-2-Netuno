@@ -1,12 +1,9 @@
-<?php 
-include "../backend/config/db.php";
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Página de usuário</title>
+  <title>Página de Clientes</title>
   <script src="../web/src/assets/js/menu.js"></script>
   <link rel="stylesheet" href="../web/src/assets/styles/css/menu.css">
   <link rel="stylesheet" href="../web/src/assets/styles/css/header.css">
@@ -22,7 +19,7 @@ include "../backend/config/db.php";
     </div>
   </header>
   <main class="main">
-    <nav class="sidebar">
+  <nav class="sidebar">
         <ul class="sidebar__nav">
           <li class="nav__item hide-children">
             <span class="item__title">
@@ -66,14 +63,13 @@ include "../backend/config/db.php";
     </nav>
     <section class="main__page-content right-container">
       <div class="page-content__title">
-        <h1 class="title__text">Usuários</h1>
-        <a href="../web/src/views/usuario.php">
+        <h1 class="title__text">Produtos</h1>
+        <a href="../web/src/views/register-product.php">
           <button type="button" class="title__include">
             <img src="../web/src/assets/svgs/plus-square.svg" alt="+">
             Incluir Registro
           </button>
         </a>
-       
       </div>
       <?php 
               $_SESSION['erro'] = $_SESSION['erro'] ?? '';
@@ -90,42 +86,51 @@ include "../backend/config/db.php";
                             $_SESSION['msgusu'] = '';
                 };  
             ?>
-      <form class="page-content__inputs">
-        <label class="input-container inputs__login">
-          Login
-          <input type="text" class="input-container__input" name='ds_login'>
+      <form class="page-content__inputs inputs-group">
+        <label class="input-container input-container-10">
+          Código
+          <input name="codigo" type="text" class="input-container__input">
         </label>
-        <label class="input-container inputs__email">
-          E-mail
-          <input type="text" class="input-container__input" name='ds_email'>
+        <label class="input-container input-container-40">
+          Nome
+          <input name="nome" type="text" class="input-container__input">
+        </label>
+        <label class="input-container input-container-30">
+          Categoria
+          <select name="categoria" id="" required>
+            <option value="0"></option>
+            <option value="1">Boneco</option>
+            <option value="2">Carro</option>
+          </select>
         </label>
         <button type="submit" class="inputs__search">
           <img src="../web/src/assets/svgs/search-icon.svg" alt="buscar">
           Buscar
         </button>
       </form>
+
       <table class="page-content__table"  border="0" cellpadding="0" cellspacing="0">
         <tr align="center">
           <th>Cód.</th>
-          <th>Login</th>
-          <th>E-mail</th>
+          <th>Nome</th>
+          <th>Categoria</th>
           <th>Ação</th>
         </tr>
         <?php
           if(count($result) > 0){
             foreach ($result as $id => $reg){
               echo "<tr align='center'>
-                      <td>{$reg['PK_ID']}</td>
-                      <td>{$reg['DS_LOGIN']}</td>
-                      <td>{$reg['DS_EMAIL']}</td>
+                      <td>{$reg['DS_CODIGO']}</td>
+                      <td>{$reg['DS_NOME']}</td>
+                      <td>{$reg['DS_CATEGORIA']}</td>
                       <td width='390'>
-                        <a href='../backend/usuarioalterar.php?id={$reg['PK_ID']}'>
+                        <a href='../backend/produtoalterar.php?id={$reg['PK_SKU']}'>
                           <button class='table__button table__edit' type='button'>
                             <img src='../web/src/assets/svgs/edit-icon.svg' alt='editar'>
                             Alterar
                           </button>
                         </a>
-                        <a href='../backend/usuariodeletar.php?id={$reg['PK_ID']}'>
+                        <a href='../backend/produtodeletar.php?id={$reg['PK_SKU']}&cod={$reg['DS_CODIGO']}'>
                           <button class='table__button table__remove' type='button'>
                             <img src='../web/src/assets/svgs/trash-icon.svg' alt='remover'>
                             Excluir
@@ -135,7 +140,7 @@ include "../backend/config/db.php";
             </tr>";
             }
           }
-        ?>
+        ?> 
       </table>
     </section>
   </main>
