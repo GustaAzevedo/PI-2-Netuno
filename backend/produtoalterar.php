@@ -23,9 +23,9 @@ if(isset($_POST['pk_id'])){
     $estoqueatual   = intval($_POST['estoque-atual']) ?? 0;
     $estoquemin     = intval($_POST['estoque-minimo']) ?? 0;
     $descricao      = $_POST['descricao'];      
-    $inativo        = $_POST['inativo'] == '1' ? 1 : 0;
+    $inativo        = $_POST['inativo'] == 'on' ? 1 : 0;
 
-
+    
     if(strlen($codigo) > 15){
         header('Location: ../web/src/views/register-product.php'); 
         $_SESSION['erro'] = true;

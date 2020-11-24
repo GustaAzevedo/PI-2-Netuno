@@ -10,13 +10,13 @@ if(!$_SESSION['usersessao']){
 
 // Listar registros
 $_GET['codigo']         = $_GET['codigo'] ?? false;
-$_GET['name']           = $_GET['name']   ?? false;
+$_GET['nome']           = $_GET['nome']   ?? false;
 $_GET['categoria']      = $_GET['categoria']   ?? false;
 
 
 
 //Se nenhum foi preenchido, traz todos os regitros
-if(!$_GET['codigo']  && !$_GET['name'] && !$_GET['categoria']){
+if(!$_GET['codigo']  && !$_GET['nome'] && !$_GET['categoria']){
     $query = "SELECT 
                     PRO.PK_SKU, 
                     PRO.DS_CODIGO, 
@@ -36,7 +36,7 @@ if(!$_GET['codigo']  && !$_GET['name'] && !$_GET['categoria']){
 }else{
 
     $codigo     = $_GET['codigo'] ?? '';
-    $nome       = $_GET['name'] ?? '';
+    $nome       = $_GET['nome'] ?? '';
     $categoria  = intval($_GET['categoria']) ?? 0;
 
     $query = "SELECT 
