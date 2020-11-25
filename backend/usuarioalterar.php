@@ -81,6 +81,13 @@ if(isset($_POST['pk_id'])){
     
     
     if($objSmtm -> execute()){
+
+        (__DIR__);
+        include './functions/gravalog.php';
+
+        $ret = Gravalog(intval($id), 'TS_USUARIO', 'Alterou', 'Usuário alterar');
+
+
         header('Location: ./usuarioconsultar.php');
         $_SESSION['erro'] = false;
         $_SESSION['msgusu'] = 'Registro alterado com sucesso!';

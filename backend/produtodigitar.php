@@ -89,6 +89,17 @@ $return = $objSmtm -> execute();
 
 
 if($return){
+
+    (__DIR__);
+    include './functions/gravalog.php';
+
+    // grava log
+    $objSmtm = $objBanco -> prepare("SELECT MAX(PK_ID) AS 'PK_ID' FROM TB_PRODUTO");
+    $objSmtm -> execute();
+    $result = $objSmtm -> fetch(PDO::FETCH_ASSOC);
+
+    $ret = Gravalog(intval($result['PK_ID']), 'TB_PRODUTO', 'Incluiu', 'Produto incluir');
+
     header('Location: ../web/src/views/register-product.php');
     $_SESSION['erro'] = false;
     $_SESSION['msgusu'] = 'Registro salvo com sucesso!';

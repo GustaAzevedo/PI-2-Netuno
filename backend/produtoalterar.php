@@ -75,6 +75,13 @@ if(isset($_POST['pk_id'])){
 
 
     if( $objSmtm -> execute()){
+
+        (__DIR__);
+        include './functions/gravalog.php';
+
+        $ret = Gravalog(intval($id), 'TB_PRODUTO', 'Alterou', 'Produto alterar');
+
+
         header('Location: ./produtoconsultar.php');
         $_SESSION['erro'] = false;
         $_SESSION['msgusu'] = 'Registro alterado com sucesso!';

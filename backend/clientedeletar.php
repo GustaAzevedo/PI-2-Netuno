@@ -19,6 +19,12 @@ if($_GET['id']){
 
     // retornando resultado
     if($result !== false){
+
+        (__DIR__);
+        include './functions/gravalog.php';
+
+        $ret = Gravalog(intval($id), 'TB_CLIENTE', 'Deletou', 'Cliente deletar');
+
         header('Location: ./clienteconsultar.php'); 
         $_SESSION['erro'] = false;
         $_SESSION['msgusu'] = "Cliente $id deletado com sucesso!";

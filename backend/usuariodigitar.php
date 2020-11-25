@@ -74,6 +74,17 @@ $return = $objSmtm -> execute();
 
 
 if($return){
+    (__DIR__);
+    include './functions/gravalog.php';
+
+    // grava log
+    $objSmtm = $objBanco -> prepare("SELECT MAX(PK_ID) AS 'PK_ID' FROM TS_USUARIO");
+    $objSmtm -> execute();
+    $result = $objSmtm -> fetch(PDO::FETCH_ASSOC);
+
+    $ret = Gravalog(intval($result['PK_ID']), 'TS_USUARIO', 'Incluiu', 'Usuário incluir');
+
+    
     header('Location: ../web/src/views/usuario.php');
     $_SESSION['erro'] = false;
     $_SESSION['msgusu'] = 'Registro salvo com sucesso!';

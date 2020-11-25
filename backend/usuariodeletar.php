@@ -27,6 +27,12 @@ if($_GET['id']){
 
     // retornando resultado
     if($result !== false){
+
+        (__DIR__);
+        include './functions/gravalog.php';
+
+        $ret = Gravalog(intval($id), 'TS_USUARIO', 'Deletou', 'Usuário deletar');
+
         header('Location: ./usuarioconsultar.php'); 
         $_SESSION['erro'] = false;
         $_SESSION['msgusu'] = "Usuário $id deletado com sucesso!";
