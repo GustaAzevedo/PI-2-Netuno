@@ -88,17 +88,17 @@
           <div class="inputs-group mb">
             <label class="input-container input-container-80">
               Nome do produto*
-              <input name="name" type="text" />
+              <input name="name" type="text" required/>
             </label>
             <label class="input-container input-container-20">
               Código*
-              <input name="codigo" type="text" />
+              <input name="codigo" type="text" required/>
             </label>
           </div>
 
           <div class="inputs-group">
             <label class="input-container input-container-40">
-              Marca
+              Marca*
               <select name="marca" id="" required>
                 <option value="0"></option>
                 <option value="1">ToyShow</option>
@@ -106,7 +106,7 @@
               </select>
             </label>
             <label class="input-container input-container-40">
-              Categoria
+              Categoria*
               <select name="categoria" id="" required>
                 <option value="0"></option>
                 <option value="1">Boneco</option>
@@ -117,20 +117,20 @@
 
           <div class="inputs-group">
             <label class="input-container input-container-25">
-              Preço venda
-              <input name="preco-venda" type="number" />
+              Preço venda*
+              <input min='0' name="preco-venda" type="number" required/>
             </label>
             <label class="input-container input-container-25">
               Preço custo
-              <input name="preco-custo" type="number" />
+              <input min='0' name="preco-custo" type="number" />
             </label>
             <label class="input-container input-container-25">
               Estoque mínimo
-              <input name="estoque-minimo" type="number" />
+              <input min='0' ame="estoque-minimo" type="number" />
             </label>
             <label class="input-container input-container-25">
               Estoque atual
-              <input name="estoque-atual" type="number" />
+              <input min='0' name="estoque-atual" type="number" />
             </label>
           </div>
 
