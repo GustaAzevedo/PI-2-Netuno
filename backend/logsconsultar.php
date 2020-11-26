@@ -8,6 +8,18 @@ if(!$_SESSION['usersessao']){
     exit();
 }
 
+if($_SESSION['usersessao']['adm'] == 0){
+    $query = "SELECT PK_ID, FK_ORIGEM, DS_TABELAORIGEM, DS_ACAO FROM TS_LOG WHERE PK_ID = 0";
+    $objsmtm = $objBanco -> prepare($query);
+    $objsmtm -> execute();
+    $result = $objsmtm -> fetchall();
+    $count = $objsmtm -> fetchall();
+    $_SESSION['erro'] = true;
+    $_SESSION['msgusu'] = 'Seu usuário não tem permissão para ver logs!';
+    include "../web/src/views/pg-logs.php";
+    exit();
+}
+
 // Listar registros
 $_GET['cod']    = $_GET['cod'] ?? false;
 $_GET['tabela'] = $_GET['tabela'] ?? false;
@@ -15,7 +27,7 @@ $_GET['tabela'] = $_GET['tabela'] ?? false;
 
 //Se nenhum foi preenchido, traz todos os regitros
 if(!$_GET['cod'] && !$_GET['tabela']){
-    $query = "SELECT PK_ID, FK_ORIGEM, DS_TABELAORIGEM, DS_ACAO FROM TS_LOG";
+    $query = "SELECT PK_ID, FK_ORIGEM, DS_TABELAORIGEM, DS_ACAO, DATE_FORMAT(DH_ACAO,'%d/%m/%Y %T') AS 'DC_ACAO' FROM TS_LOG ";
     $objsmtm = $objBanco -> prepare($query);
     $objsmtm -> execute();
     $result = $objsmtm -> fetchall();
@@ -27,7 +39,7 @@ if(!$_GET['cod'] && !$_GET['tabela']){
     $cod    = $_GET['cod'] ?? 0;
     $tabela = $_GET['tabela'] ?? '';
 
-    $query = "SELECT PK_ID, FK_ORIGEM, DS_TABELAORIGEM, DS_ACAO FROM TS_LOG WHERE PK_ID <> 0";
+    $query = "SELECT PK_ID, FK_ORIGEM, DS_TABELAORIGEM, DS_ACAO, DATE_FORMAT(DH_ACAO,'%d/%m/%Y %T') AS 'DC_ACAO' FROM TS_LOG WHERE PK_ID <> 0";
 
     //Adicionando as condições para pesquisa
     if($cod != 0){

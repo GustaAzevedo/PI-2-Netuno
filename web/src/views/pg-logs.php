@@ -104,6 +104,7 @@
           <th>Cód Origem.</th>
           <th>Tabela</th>
           <th>Ação</th>
+          <th>Hora</th>
           <th></th>
         </tr>
         <?php
@@ -113,8 +114,9 @@
                       <td>{$reg['FK_ORIGEM']}</td>
                       <td>{$reg['DS_TABELAORIGEM']}</td>
                       <td>{$reg['DS_ACAO']}</td>
+                      <td>{$reg['DC_ACAO']}</td>
                       <td width='390'>
-                        <a href='../backend/produtoalterar.php?id={$reg['PK_ID']}'>
+                        <a href='../backend/logsvizualizar.php?id={$reg['PK_ID']}'>
                         <button class='table__button table__edit' type='button'>
                             <img src='../web/src/assets/svgs/eye.svg' alt='editar'>
                             Visualizar
