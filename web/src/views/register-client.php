@@ -21,51 +21,47 @@
       <div class="bg-yellow"></div>
     </header>
     <main class="main">
-      <nav class="sidebar">
-        <ul class="sidebar__nav">
-          <li class="nav__item hide-children">
-            <span class="item__title">
-              Cadastros
-              <img
-                class="title__icon"
-                src="../assets/svgs/arrow-down.svg"
-                alt="arrow down"
-              />
-            </span>
-            <ul class="item__subnav">
-              <li class="subnav__item">
-                <a class="item__link" href="../../../backend/clienteconsultar.php">Clientes</a>
+    <nav class="sidebar">
+            <ul class="sidebar__nav">
+              <li class="nav__item hide-children">
+                <span class="item__title">
+                  Cadastros 
+                  <img class="title__icon" src="../assets/svgs/arrow-down.svg" alt="arrow down">
+                </span>
+                <ul class="item__subnav">
+                  <li class="subnav__item">
+                    <a class="item__link" href="../../../backend/clienteconsultar.php">Clientes</a>
+                  </li>
+                  <li class="subnav__item">
+                    <a class="item__link" href="../../../backend/produtoconsultar.php">Produtos</a>
+                  </li>
+                  <li class="subnav__item">
+                    <a class="item__link" href="../../../backend/usuarioconsultar.php">Usuários</a>
+                  </li>
+                </ul>
               </li>
-              <li class="subnav__item">
-                <a class="item__link" href="../../../backend/produtoconsultar.php">Produtos</a>
-              </li>
-              <li class="subnav__item">
-                <a class="item__link" href="../../../backend/usuarioconsultar.php">Usuários</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav__item hide-children">
-            <span class="item__title">
-              Mais
-              <img
-                class="title__icon"
-                src="../assets/svgs/arrow-down.svg"
-                alt="arrow down"
-              />
-            </span>
-            <ul class="item__subnav">
-              <li class="subnav__item">
-                <a class="item__link" href="#">Logs</a>
-              </li>
-              <li class="subnav__item">
-                <a class="item__link" href="../../../backend/functions/logout.php">Logout</a>
+              <li class="nav__item hide-children">
+                <span class="item__title">
+                  Mais
+                  <img
+                    class="title__icon"
+                    src="../assets/svgs/arrow-down.svg"
+                    alt="arrow down"
+                  />
+                </span>
+                <ul class="item__subnav">
+                  <li class="subnav__item">
+                    <a class="item__link" href="../../../backend/logsconsultar.php">Logs</a>
+                  </li>
+                  <li class="subnav__item">
+                    <a class="item__link" href="../../../backend/functions/logout.php">Logout</a>
+                  </li>
+                </ul>
               </li>
             </ul>
-          </li>
-        </ul>
-        <a href="./welcome.php">
-          <img src="../assets/images/logo.png" alt="netuno" />
-        </a>
+            <a href="./welcome.php">
+              <img src="../assets/images/logo.png" alt="netuno">
+            </a>
       </nav>
       <section class="main__page-content right-container">
         <div class="page-content__title">

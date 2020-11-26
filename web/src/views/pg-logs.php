@@ -63,40 +63,36 @@
     </nav>
     <section class="main__page-content right-container">
       <div class="page-content__title">
-        <h1 class="title__text">Clientes</h1>
-        <a href="../web/src/views/register-client.php">
-          <button type="button" class="title__include">
-            <img src="../web/src/assets/svgs/plus-square.svg" alt="+">
-            Incluir Registro
-          </button>
-        </a>
+        <h1 class="title__text">Logs</h1>
       </div>
       <?php 
-        $_SESSION['erro'] = $_SESSION['erro'] ?? '';
-        $_SESSION['msgusu'] = $_SESSION['msgusu'] ?? '';
-          if($_SESSION['erro']){
-              echo '  <div class="invalido">
-                          <p> '. $_SESSION["msgusu"] .'</p>
-                      </div>';
-                      $_SESSION['msgusu'] = '';
-                      $_SESSION['erro']   = '';
-          }else{
-              echo  '  <div class="valido">
-                          <p> ' . $_SESSION["msgusu"] . '</p>
-                      </div>';
-                      $_SESSION['msgusu'] = '';
-                      $_SESSION['erro']   = '';
-          };  
-      ?>
-
-      <form class="page-content__inputs" method='GET' action='../backend/clienteconsultar.php'>
-        <label class="input-container inputs__login" name='ds_fantasia'>
-          Fantasia
-          <input type="text" class="input-container__input"  name='ds_fantasia'>
+              $_SESSION['erro'] = $_SESSION['erro'] ?? '';
+              $_SESSION['msgusu'] = $_SESSION['msgusu'] ?? '';
+                if($_SESSION['erro']){
+                    echo '  <div class="invalido">
+                                <p> '. $_SESSION["msgusu"] .'</p>
+                            </div>';
+                            $_SESSION['msgusu'] = '';
+                }else{
+                    echo  '  <div class="valido">
+                                <p> ' . $_SESSION["msgusu"] . '</p>
+                            </div>';
+                            $_SESSION['msgusu'] = '';
+                };  
+            ?>
+      <form class="page-content__inputs">
+        <label class="input-container inputs__login">
+          Cod origem
+          <input type="text" name='cod' class="input-container__input">
         </label>
-        <label class="input-container inputs__email" name='nr_cpf'>
-          CPF/CNPJ
-          <input type="number" class="input-container__input"  name='nr_cpf'>
+        <label class="input-container inputs__email">
+          Tabela
+          <select name="tabela" >
+            <option value=""></option>
+            <option value="TS_USUARIO">Usuário</option>
+            <option value="TB_CLIENTE">Cliente</option>
+            <option value="TB_PRODUTO">Produto</option>
+          </select>
         </label>
         <button type="submit" class="inputs__search">
           <img src="../web/src/assets/svgs/search-icon.svg" alt="buscar">
@@ -105,36 +101,30 @@
       </form>
       <table class="page-content__table"  border="0" cellpadding="0" cellspacing="0">
         <tr align="center">
-          <th>Cód.</th>
-          <th>Fantasia</th>
-          <th>CPF/CPNJ</th>
+          <th>Cód Origem.</th>
+          <th>Tabela</th>
           <th>Ação</th>
+          <th></th>
         </tr>
         <?php
           if(count($result) > 0){
             foreach ($result as $id => $reg){
               echo "<tr align='center'>
-                      <td>{$reg['PK_ID']}</td>
-                      <td>{$reg['DS_FANTASIA']}</td>
-                      <td>{$reg['NR_CPF']}</td>
+                      <td>{$reg['FK_ORIGEM']}</td>
+                      <td>{$reg['DS_TABELAORIGEM']}</td>
+                      <td>{$reg['DS_ACAO']}</td>
                       <td width='390'>
-                        <a href='../backend/clientealterar.php?id={$reg['PK_ID']}'>
-                          <button class='table__button table__edit' type='button'>
-                            <img src='../web/src/assets/svgs/edit-icon.svg' alt='editar'>
-                            Alterar
-                          </button>
-                        </a>
-                        <a href='../backend/clientedeletar.php?id={$reg['PK_ID']}'>
-                          <button class='table__button table__remove' type='button'>
-                            <img src='../web/src/assets/svgs/trash-icon.svg' alt='remover'>
-                            Excluir
-                          </button>
+                        <a href='../backend/produtoalterar.php?id={$reg['PK_ID']}'>
+                        <button class='table__button table__edit' type='button'>
+                            <img src='../web/src/assets/svgs/eye.svg' alt='editar'>
+                            Visualizar
+                        </button>
                         </a>
                       </td>
             </tr>";
             }
           }
-        ?>
+        ?> 
       </table>
     </section>
   </main>

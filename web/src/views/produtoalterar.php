@@ -34,13 +34,13 @@
             </span>
             <ul class="item__subnav">
               <li class="subnav__item">
-                <a class="item__link" href="../../../backend/clienteconsultar.php">Clientes</a>
+                <a class="item__link" href="../backend/clienteconsultar.php">Clientes</a>
               </li>
               <li class="subnav__item">
-                <a class="item__link" href="../../../backend/produtoconsultar.php">Produtos</a>
+                <a class="item__link" href="../backend/produtoconsultar.php">Produtos</a>
               </li>
               <li class="subnav__item">
-                <a class="item__link" href="../../../backend/usuarioconsultar.php">Usuários</a>
+                <a class="item__link" href="../backend/usuarioconsultar.php">Usuários</a>
               </li>
             </ul>
           </li>
@@ -55,15 +55,15 @@
             </span>
             <ul class="item__subnav">
               <li class="subnav__item">
-                <a class="item__link" href="#">Logs</a>
+                <a class="item__link" href="../backend/logsconsultar.php">Logs</a>
               </li>
               <li class="subnav__item">
-                <a class="item__link" href="../../../backend/functions/logout.php">Logout</a>
+                <a class="item__link" href="../backend/functions/logout.php">Logout</a>
               </li>
             </ul>
           </li>
         </ul>
-        <a href="./welcome.php">
+        <a href="../web/src/views/welcome.php">
           <img src="../web/src/assets/images/logo.png" alt="netuno" />
         </a>
       </nav>

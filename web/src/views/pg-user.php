@@ -22,7 +22,7 @@ include "../backend/config/db.php";
     </div>
   </header>
   <main class="main">
-    <nav class="sidebar">
+  <nav class="sidebar">
         <ul class="sidebar__nav">
           <li class="nav__item hide-children">
             <span class="item__title">
@@ -52,7 +52,7 @@ include "../backend/config/db.php";
             </span>
             <ul class="item__subnav">
               <li class="subnav__item">
-                <a class="item__link" href="#">Logs</a>
+                <a class="item__link" href="./logsconsultar.php">Logs</a>
               </li>
               <li class="subnav__item">
                 <a class="item__link" href="../backend/functions/logout.php">Logout</a>
