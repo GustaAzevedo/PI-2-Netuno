@@ -37,9 +37,23 @@ $objSmtm -> execute();
 $result = $objSmtm -> fetch(PDO::FETCH_ASSOC);
 // se cair aqui, já existe cadastrado
 if($result){
-    header('Location: ../web/src/views/usuario.php'); 
+    header('Location: ../web/src/views/register-product.php'); 
     $_SESSION['erro'] = true;
     $_SESSION['msgusu'] = 'Código já cadastrado!';
+    exit();
+}
+
+if($marca == 0){
+    header('Location: ../web/src/views/register-product.php'); 
+    $_SESSION['erro'] = true;
+    $_SESSION['msgusu'] = 'Marca não pode está vazia!';
+    exit();
+}
+
+if($categoria == 0){
+    header('Location: ../web/src/views/register-product.php'); 
+    $_SESSION['erro'] = true;
+    $_SESSION['msgusu'] = 'categoria não pode está vazia!';
     exit();
 }
 

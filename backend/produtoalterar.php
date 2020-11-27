@@ -23,14 +23,15 @@ if(isset($_POST['pk_id'])){
     $estoqueatual   = intval($_POST['estoque-atual']) ?? 0;
     $estoquemin     = intval($_POST['estoque-minimo']) ?? 0;
     $descricao      = $_POST['descricao'];      
-    $inativo        = $_POST['inativo'] == 'on' ? 1 : 0;
+    $inativo        = isset($_POST['inativo']) == true ? 1 : 0;
 
     
     if(strlen($codigo) > 15){
-        header('Location: ../web/src/views/register-product.php'); 
+        header("Location: ./produtoalterar.php?id=$id");
         $_SESSION['erro'] = true;
         $_SESSION['msgusu'] = 'Código tem mais caracter do que o suportado (Máx 15)!';
-        exit();
+        exit();        
+        
     }
 
     //verificando Código
@@ -40,9 +41,25 @@ if(isset($_POST['pk_id'])){
     $result = $objSmtm -> fetch(PDO::FETCH_ASSOC);
     // se cair aqui, já existe cadastrado
     if($result){
-        header('Location: ../web/src/views/usuario.php'); 
+        header("Location: ./produtoalterar.php?id=$id");
         $_SESSION['erro'] = true;
         $_SESSION['msgusu'] = 'Código já cadastrado!';
+        exit();
+        
+    }
+
+    if($marca == 0){
+        header("Location: ./produtoalterar.php?id=$id");
+        $_SESSION['erro'] = true;
+        $_SESSION['msgusu'] = 'Marca não pode está vazia!';
+        exit();
+        
+    }
+    
+    if($categoria == 0){
+        header("Location: ./produtoalterar.php?id=$id");
+        $_SESSION['erro'] = true;
+        $_SESSION['msgusu'] = 'categoria não pode está vazia!';
         exit();
     }
 

@@ -106,7 +106,7 @@
                     </div>
                 </div>
                 <div class="form-3">
-                    <input type="checkbox"  name='tg_adm' <?php if($array['TG_ADM'] == 1){ $cond = "value='1' checked";}else{ $cond = "value='1'";}echo"$cond";?>>
+                    <input type="checkbox"  name='tg_adm' <?php if(isset($array['TG_ADM']) && $array['TG_ADM'] == 1){ $cond = "value='1' checked";}else{ $cond = "value='1'";}echo"$cond";?>>
                     <span>Perfil de Administrador</span>
                     <input type="hidden" name='pk_id' value='<?php echo "{$array['PK_ID']}" ?>'>
                 </div>

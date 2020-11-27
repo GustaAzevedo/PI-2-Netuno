@@ -102,7 +102,7 @@
 
           <div class="inputs-group">
             <label class="input-container input-container-40">
-              Marca
+              Marca*
               <select name="marca" id="" required>
                 <option value="0"></option>
                 <?php
@@ -123,7 +123,7 @@
               </select>
             </label>
             <label class="input-container input-container-40">
-              Categoria
+              Categoria*
               <select name="categoria" id="" required>
                 <option value="0"></option>
                 <?php

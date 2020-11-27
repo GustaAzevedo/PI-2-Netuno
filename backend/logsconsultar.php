@@ -27,7 +27,7 @@ $_GET['tabela'] = $_GET['tabela'] ?? false;
 
 //Se nenhum foi preenchido, traz todos os regitros
 if(!$_GET['cod'] && !$_GET['tabela']){
-    $query = "SELECT PK_ID, FK_ORIGEM, DS_TABELAORIGEM, DS_ACAO, DATE_FORMAT(DH_ACAO,'%d/%m/%Y %T') AS 'DC_ACAO' FROM TS_LOG ";
+    $query = "SELECT PK_ID, FK_ORIGEM, DS_TABELAORIGEM, DS_ACAO, DATE_FORMAT(DH_ACAO,'%d/%m/%Y %T') AS 'DC_ACAO' FROM TS_LOG ORDER BY DH_ACAO DESC ";
     $objsmtm = $objBanco -> prepare($query);
     $objsmtm -> execute();
     $result = $objsmtm -> fetchall();
@@ -39,7 +39,7 @@ if(!$_GET['cod'] && !$_GET['tabela']){
     $cod    = $_GET['cod'] ?? 0;
     $tabela = $_GET['tabela'] ?? '';
 
-    $query = "SELECT PK_ID, FK_ORIGEM, DS_TABELAORIGEM, DS_ACAO, DATE_FORMAT(DH_ACAO,'%d/%m/%Y %T') AS 'DC_ACAO' FROM TS_LOG WHERE PK_ID <> 0";
+    $query = "SELECT PK_ID, FK_ORIGEM, DS_TABELAORIGEM, DS_ACAO, DATE_FORMAT(DH_ACAO,'%d/%m/%Y %T') AS 'DC_ACAO', DH_ACAO FROM TS_LOG WHERE PK_ID <> 0 ";
 
     //Adicionando as condições para pesquisa
     if($cod != 0){
@@ -49,6 +49,8 @@ if(!$_GET['cod'] && !$_GET['tabela']){
         $query = $query . " AND DS_TABELAORIGEM = :tabela";
     }
 
+    $query = $query . ' ORDER BY DH_ACAO DESC';
+    
     //Trocando as condições
     $objSmtm = $objBanco -> prepare($query);
     if($cod != 0){
@@ -57,6 +59,8 @@ if(!$_GET['cod'] && !$_GET['tabela']){
     if($tabela != ''){
         $objSmtm -> bindparam(':tabela',$tabela);
     }
+
+
 
     //Passando para a tela
     $objSmtm -> execute();
