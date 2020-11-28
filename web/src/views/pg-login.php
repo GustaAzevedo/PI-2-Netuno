@@ -37,7 +37,6 @@
                             <label class=" d-block" for="password">Senha</label>
                             <input class=" d-block" type="password" name="senha" id="password">
                         </div>
-                        <span class=" d-block"><a href="./">Esqueci a senha</a></span>
                         <!-- colocar o link da página esqueci a senha quando tiver -->
                         <div class=" button">
                             <input class=" btn" type="submit" value="Entrar">
