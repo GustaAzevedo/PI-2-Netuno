@@ -2,10 +2,11 @@
   session_start();
   
   // validando usuário
-  if($_SESSION['idusuario'] = 0){
-      header('Location: ../web/src/views/pg-login.html');
+  if($_SESSION['usersessao']['idusuario'] == 0){
+      header('Location: ./pg-login.html');
       exit();
   }
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

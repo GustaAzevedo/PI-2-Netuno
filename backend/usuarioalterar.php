@@ -3,10 +3,18 @@ session_start();
 include_once "./config/db.php";
 
 // validando usuário
-if($_SESSION['idusuario'] = 0){
-    header('Location: ../web/src/views/pg-login.html');
+if($_SESSION['usersessao']['idusuario'] == 0){
+    header('Location: ./pg-login.html');
     exit();
 }
+
+if($_SESSION['usersessao']['adm'] == 0){
+    header('Location: ./usuarioconsultar.php'); 
+    $_SESSION['erro'] = true;
+    $_SESSION['msgusu'] = 'Você não tem permissão para alterar usuários!';
+    exit();
+}
+
 
 // verificando se é uma alteração   
 if(isset($_POST['pk_id'])){
@@ -36,7 +44,6 @@ if(isset($_POST['pk_id'])){
         include "../web/src/views/usuarioalterar.php";
         exit();
     }
-
 
     //verificando login
     $objSmtm = $objBanco -> prepare("SELECT DS_LOGIN FROM TS_USUARIO WHERE DS_LOGIN = :LOGIN AND PK_ID <> $id");

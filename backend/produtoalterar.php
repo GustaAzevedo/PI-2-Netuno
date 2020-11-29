@@ -3,8 +3,9 @@ session_start();
 include_once "./config/db.php";
 
 // validando usuário
-if($_SESSION['idusuario'] = 0){
-    header('Location: ../web/src/views/pg-login.html');
+// validando usuário
+if($_SESSION['usersessao']['idusuario'] == 0){
+    header('Location: ./pg-login.html');
     exit();
 }
 
