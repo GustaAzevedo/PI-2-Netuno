@@ -89,7 +89,7 @@ if(isset($_POST['pk_id'])){
     $fantasia = $_POST['fantasia'] ?? '';
     $objSmtm -> bindparam(':fantasia',$fantasia);
 
-    $razao = $_POST['fantasia'] ?? '';
+    $razao = $_POST['razao'] ?? '';
     $objSmtm -> bindparam(':razao',$razao);
 
     $pessoa = $_POST['pessoa'] ?? '';
