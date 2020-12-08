@@ -5,7 +5,7 @@
     <ul>
         <li>Guilherme Pereira Castro</li>
         <li>Gustavo de Azevedo Pereira</li>
-        <li>joão Victor Moreira da Silva</li>
+        <li>João Victor Moreira da Silva</li>
         <li>Leonardo Ciriaco dos Santos</li>
     </ul>
 </div>
