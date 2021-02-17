@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página de Clientes</title>
+  <script src="../assets/js/menu.js"></script>
+  <link rel="stylesheet" href="../assets/styles/css/menu.css">
+  <link rel="stylesheet" href="../assets/styles/css/header.css">
+  <link rel="stylesheet" href="../assets/styles/css/main.css">
+  <link rel="stylesheet" href="../assets/styles/css/pg-users.css">
+  <link href="https://fonts.googleapis.com/css2?family=Rhodium+Libre&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="bg-blue">
+    </div>
+    <div class="bg-yellow">
+    </div>
+  </header>
+  <main class="main">
+    <nav class="sidebar">
+        <ul class="sidebar__nav">
+          <li class="nav__item hide-children">
+            <span class="item__title">
+              Cadastros 
+              <img class="title__icon" src="../assets/svgs/arrow-down.svg" alt="arrow down">
+            </span>
+            <ul class="item__subnav">
+              <li class="subnav__item">
+                <a class="item__link" href="/">Clientes</a>
+              </li>
+              <li class="subnav__item">
+                <a class="item__link" href="/">Produtos</a>
+              </li>
+              <li class="subnav__item">
+                <a class="item__link" href="../views/usuario.html">Usuários</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav__item hide-children">
+            <span class="item__title">
+              Cadastros 
+              <img class="title__icon" src="../assets/svgs/arrow-down.svg" alt="arrow down">
+            </span>
+            <ul class="item__subnav">
+              <li class="subnav__item">
+                <a class="item__link" href="/">Clientes</a>
+              </li>
+              <li class="subnav__item">
+                <a class="item__link" href="/">Produtos</a>
+              </li>
+              <li class="subnav__item">
+                <a class="item__link" href="../views/usuario.html">Usuários</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <img src="../assets/images/logo.png" alt="netuno">
+    </nav>
+    <section class="main__page-content right-container">
+      <div class="page-content__title">
+        <h1 class="title__text">Logs</h1>
+      </div>
+      <form class="page-content__inputs">
+        <label class="input-container inputs__login">
+          Cod origem
+          <input type="text" class="input-container__input">
+        </label>
+        <label class="input-container inputs__email">
+          Tabela
+          <select name="tabela" >
+            <option value=""></option>
+            <option value="TS_USUARIO">Usuário</option>
+            <option value="TB_CLIENTE">Cliente</option>
+            <option value="TB_PRODUTO">Produto</option>
+          </select>
+        </label>
+        <button type="submit" class="inputs__search">
+          <img src="../assets/svgs/search-icon.svg" alt="buscar">
+          Buscar
+        </button>
+      </form>
+      <table class="page-content__table"  border="0" cellpadding="0" cellspacing="0">
+        <tr align="center">
+          <th>Cód Origem.</th>
+          <th>Tabela</th>
+          <th>Ação</th>
+          <th></th>
+        </tr>
+        <tr align="center">
+          <td>1</td>
+          <td>Rogério Santos</td>
+          <td>999.999.999/99</td>
+          <td width="390" align="center">
+            <button class="table__button table__edit" type="button">
+              <img src="../assets/svgs/eye.svg" alt="editar">
+              Visualizar
+            </button>
+          </td>
+        </tr>
+        <tr align="center">
+          <td>2</td>
+          <td>Piticas</td>
+          <td>21.252.132/0001-22</td>
+          <td width="390" align="center">
+            <button class="table__button table__edit" type="button">
+              <img src="../assets/svgs/eye.svg" alt="editar">
+              Visualizar
+            </button>
+          </td>
+        </tr>
+        <tr align="center">
+          <td>3</td>
+          <td>Mauro Souza</td>
+          <td>999.885.858/41</td>
+          <td width="390" align="center">
+            <button class="table__button table__edit" type="button">
+              <img src="../assets/svgs/eye.svg" alt="editar">
+              Visualizar
+            </button>
+          </td>
+        </tr>
+        <tr align="center">
+          <td>4</td>
+          <td>Bruna Matos</td>
+          <td>784.854.985/44</td>
+          <td width="390" align="center">
+            <button class="table__button table__edit" type="button">
+              <img src="../assets/svgs/eye.svg" alt="editar">
+              Visualizar
+            </button>
+          </td>
+        </tr>
+        <tr align="center">
+          <td>5</td>
+          <td>Burguer Heros</td>
+          <td>85.698.658/8552-01</td>
+          <td width="390" align="center">
+            <button class="table__button table__edit" type="button">
+              <img src="../assets/svgs/eye.svg" alt="editar">
+              Visualizar
+            </button>
+          </td>
+        </tr>
+        <tr align="center">
+          <td>6</td>
+          <td>Burguer King</td>
+          <td>45.854.652/0001-25</td>
+          <td width="390" align="center">
+            <button class="table__button table__edit" type="button">
+              <img src="../assets/svgs/eye.svg" alt="editar">
+              Visualizar
+            </button>
+          </td>
+        </tr>
+        <tr align="center">
+          <td>7</td>
+          <td>Simone Santos</td>
+          <td>333.548.698/54</td>
+          <td width="390" align="center">
+            <button class="table__button table__edit" type="button">
+              <img src="../assets/svgs/eye.svg" alt="editar">
+              Visualizar
+            </button>
+          </td>
+        </tr>
+      </table>
+    </section>
+  </main>
+</body>
+</html>

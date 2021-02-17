@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Página de usuário</title>
+    <script src="../assets/js/menu.js"></script>
+    <link rel="stylesheet" href="../assets/styles/css/menu.css" />
+    <link rel="stylesheet" href="../assets/styles/css/header.css" />
+    <link rel="stylesheet" href="../assets/styles/css/main.css" />
+    <link rel="stylesheet" href="../assets/styles/css/register-client.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rhodium+Libre&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="bg-blue"></div>
+      <div class="bg-yellow"></div>
+    </header>
+    <main class="main">
+      <nav class="sidebar">
+        <ul class="sidebar__nav">
+          <li class="nav__item hide-children">
+            <span class="item__title">
+              Cadastros
+              <img
+                class="title__icon"
+                src="../assets/svgs/arrow-down.svg"
+                alt="arrow down"
+              />
+            </span>
+            <ul class="item__subnav">
+              <li class="subnav__item">
+                <a class="item__link" href="../../../backend/register-client.php">Clientes</a>
+              </li>
+              <li class="subnav__item">
+                <a class="item__link" href="/">Produtos</a>
+              </li>
+              <li class="subnav__item">
+                <a class="item__link" href="../../../backend/usuarioconsultar.php">Usuários</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav__item hide-children">
+            <span class="item__title">
+              Cadastros
+              <img
+                class="title__icon"
+                src="../assets/svgs/arrow-down.svg"
+                alt="arrow down"
+              />
+            </span>
+            <ul class="item__subnav">
+              <li class="subnav__item">
+                <a class="item__link" href="../../../backend/register-client.php">Clientes</a>
+              </li>
+              <li class="subnav__item">
+                <a class="item__link" href="/">Produtos</a>
+              </li>
+              <li class="subnav__item">
+                <a class="item__link" href="../../../backend/usuarioconsultar.php">Usuários</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <img src="../assets/images/logo.png" alt="netuno" />
+      </nav>
+      <section class="main__page-content right-container">
+        <div class="page-content__title">
+          <h1 class="page-title mb">Visualizar logs</h1>
+        </div>
+        <form class="page-content__inputs mb">
+          <div class="inputs-group mb">
+            <label class="input-container input-container-50">
+              Cod Origem
+              <input disabled name="cod-origem" type="text" />
+            </label>
+            <label class="input-container input-container-50">
+              Tabela
+              <input disabled name="tabela" type="text" />
+            </label>
+          </div>
+
+          <div class="inputs-group ">
+            <label class="input-container input-container-50">
+              Ação
+              <input disabled name="acao" type="text" />
+            </label>
+            <label class="input-container input-container-50">
+              Hora da ação
+              <input disabled name="hora-acao" type="text" />
+            </label>
+          </div>
+
+          <div class="inputs-group">
+            <label class="input-container input-container-50">
+              Usuário
+              <input disabled name="usuario" type="text" />
+            </label>
+            <label class="input-container input-container-50">
+              Rotina
+              <input disabled name="rotina" type="text" />
+            </label>
+          </div>
+
+          <button class="blue-button" type="button">Voltar</button>
+
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
